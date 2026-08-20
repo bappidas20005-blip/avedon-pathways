@@ -141,7 +141,7 @@ const centres = [
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-transparent">
       <SiteHeader />
 
       {/* Hero */}
@@ -192,7 +192,7 @@ function Index() {
       </section>
 
       {/* Brands */}
-      <section id="brands" className="border-y border-border bg-card py-24">
+      <section id="brands" className="border-y border-border bg-card/60 backdrop-blur-xl py-24">
         <div className="mx-auto max-w-7xl px-5">
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-brand">
             Our brands
@@ -323,7 +323,7 @@ function Index() {
       </section>
 
       {/* Programs + Centres */}
-      <section id="programs" className="border-y border-border bg-card py-24">
+      <section id="programs" className="border-y border-border bg-card/60 backdrop-blur-xl py-24">
         <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-2">
           <div>
             <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-brand">
