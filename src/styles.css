@@ -19,6 +19,12 @@
  */
 
 @theme inline {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Roboto", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: var(--brand);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-soft: var(--brand-soft);
+  --color-ink: var(--ink);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -62,21 +68,25 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 1rem;
+  --brand: oklch(0.55 0.128 244.5);
+  --brand-deep: oklch(0.36 0.095 248);
+  --brand-soft: oklch(0.955 0.018 240);
+  --ink: oklch(0.19 0.02 250);
+  --background: oklch(0.995 0.003 240);
+  --foreground: oklch(0.19 0.02 250);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.19 0.02 250);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.19 0.02 250);
+  --primary: oklch(0.55 0.128 244.5);
+  --primary-foreground: oklch(0.99 0.005 240);
+  --secondary: oklch(0.955 0.018 240);
+  --secondary-foreground: oklch(0.36 0.095 248);
+  --muted: oklch(0.965 0.008 240);
+  --muted-foreground: oklch(0.52 0.03 250);
+  --accent: oklch(0.955 0.018 240);
+  --accent-foreground: oklch(0.36 0.095 248);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.929 0.013 255.508);
@@ -140,5 +150,28 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-sans);
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility gradient-brand {
+  background-image: linear-gradient(
+    135deg,
+    var(--brand-deep),
+    var(--brand) 55%,
+    oklch(0.66 0.13 232)
+  );
+}
+
+@utility shadow-elegant {
+  box-shadow: 0 24px 60px -30px color-mix(in oklab, var(--brand) 45%, transparent);
 }
