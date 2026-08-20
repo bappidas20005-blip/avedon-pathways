@@ -98,7 +98,7 @@ const paths: Path[] = [
 ];
 
 export function FindYourPath() {
-  const [active, setActive] = useState<Path>(paths[3]);
+  const [active, setActive] = useState<Path>(paths[3] as Path);
 
   return (
     <section id="find-your-path" className="bg-brand-soft py-24">
