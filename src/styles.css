@@ -150,5 +150,28 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-sans);
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility gradient-brand {
+  background-image: linear-gradient(
+    135deg,
+    var(--brand-deep),
+    var(--brand) 55%,
+    oklch(0.66 0.13 232)
+  );
+}
+
+@utility shadow-elegant {
+  box-shadow: 0 24px 60px -30px color-mix(in oklab, var(--brand) 45%, transparent);
 }
